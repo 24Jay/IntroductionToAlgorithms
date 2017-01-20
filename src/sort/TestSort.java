@@ -15,6 +15,9 @@ public class TestSort
 		ISort heap = new HeapSort();
 		testSort(heap, a.clone());
 		
+		
+		ISort merge= new MergeSort();
+		testSort(merge, a.clone());
 //		for (int i = 0; i < a.length; i++)
 //			System.out.print(a[i] + "\t");
 	}
