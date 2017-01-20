@@ -1,4 +1,4 @@
-package DataStructure.bst;
+package dataStructure.bst;
 
 public class BinaryNode<T>
 {
