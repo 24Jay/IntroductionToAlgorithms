@@ -12,13 +12,16 @@ public class TestSort
 		ISort selection = new SelectionSort();
 		testSort(selection, a.clone());
 		
-		for (int i = 0; i < a.length; i++)
-			System.out.print(a[i] + "\t");
+		ISort heap = new HeapSort();
+		testSort(heap, a.clone());
+		
+//		for (int i = 0; i < a.length; i++)
+//			System.out.print(a[i] + "\t");
 	}
 
 	private static void testSort(ISort sort, int[] a)
 	{
-		System.out.println("Sort Algorithm : " + sort.getClass());
+		System.out.println("Sort Algorithm : " + sort.getClass().getName());
 		a = sort.sort(a);
 		for (int i = 0; i < a.length; i++)
 			System.out.print(a[i] + "\t");

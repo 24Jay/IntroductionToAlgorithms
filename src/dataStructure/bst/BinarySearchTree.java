@@ -79,10 +79,14 @@ public class BinarySearchTree<T extends Comparable>
 		{
 			r.left = insert(r.left, x);
 		}
-		if (x.compareTo(r.element) > 0)
+		/**
+		 * 在使用BinaryTree进行堆排序的时候，如果这里不考虑相等的情况，排序会出现错误
+		 */
+		if (x.compareTo(r.element) >= 0)
 		{
 			r.right = insert(r.right, x);
 		}
+
 		return r;
 	}
 
@@ -134,5 +138,10 @@ public class BinarySearchTree<T extends Comparable>
 		// 右
 		if (r.right != null)
 			walkTree(r.right);
+	}
+
+	public BinaryNode<T> getRoot()
+	{
+		return this.root;
 	}
 }

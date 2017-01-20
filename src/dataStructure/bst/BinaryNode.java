@@ -2,9 +2,9 @@ package dataStructure.bst;
 
 public class BinaryNode<T>
 {
-	T element;
-	BinaryNode<T> left;
-	BinaryNode<T> right;
+	public T element;
+	public BinaryNode<T> left;
+	public BinaryNode<T> right;
 
 	public BinaryNode(T e)
 	{
