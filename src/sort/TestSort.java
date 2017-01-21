@@ -24,7 +24,7 @@ public class TestSort
 		ISort buck = new BuckSort();
 		testSort(buck, a.clone());
 
-		System.out.println("*******************riginal Array*********************** ");
+		System.out.println("*******************original Array*********************** ");
 		for (int i = 0; i < a.length; i++)
 			System.out.print(a[i] + "\t");
 	}
