@@ -1,6 +1,6 @@
 package sort.nn;
 
-import sort.ISort;
+import sort.inf.ISort;
 
 public class BubbleSort implements ISort
 {

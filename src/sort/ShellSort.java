@@ -1,5 +1,7 @@
 package sort;
 
+import sort.inf.ISort;
+
 public class ShellSort implements ISort
 {
 

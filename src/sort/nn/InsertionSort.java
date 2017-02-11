@@ -1,6 +1,6 @@
 package sort.nn;
 
-import sort.ISort;
+import sort.inf.ISort;
 
 /**
  * 插入排序： 假设0...p-1是已经排序过的，将p和前面的逐个对比，插入到合适的位置

@@ -1,4 +1,4 @@
-package sort;
+package sort.inf;
 
 public interface ISort
 {

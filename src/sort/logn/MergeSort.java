@@ -1,6 +1,6 @@
 package sort.logn;
 
-import sort.ISort;
+import sort.inf.ISort;
 
 /**
  * 归并排序，分治

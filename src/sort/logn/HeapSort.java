@@ -2,7 +2,7 @@ package sort.logn;
 
 import dataStructure.bst.BinaryNode;
 import dataStructure.bst.BinarySearchTree;
-import sort.ISort;
+import sort.inf.ISort;
 
 public class HeapSort implements ISort
 {
