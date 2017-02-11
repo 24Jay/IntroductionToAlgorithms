@@ -1,5 +1,12 @@
 package sort;
 
+import sort.logn.HeapSort;
+import sort.logn.MergeSort;
+import sort.logn.QuickSort;
+import sort.nn.BubbleSort;
+import sort.nn.InsertionSort;
+import sort.nn.SelectionSort;
+
 public class TestSort
 {
 	public static void main(String[] args)
@@ -23,6 +30,9 @@ public class TestSort
 
 		ISort buck = new BuckSort();
 		testSort(buck, a.clone());
+		
+		ISort insert = new InsertionSort();
+		testSort(insert, a.clone());
 
 		System.out.println("*******************original Array*********************** ");
 		for (int i = 0; i < a.length; i++)

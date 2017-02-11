@@ -1,5 +1,6 @@
-package sort;
+package sort.logn;
 
+import sort.ISort;
 
 public class QuickSort implements ISort
 {

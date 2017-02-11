@@ -1,4 +1,6 @@
-package sort;
+package sort.nn;
+
+import sort.ISort;
 
 public class SelectionSort implements ISort
 {
