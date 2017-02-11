@@ -2,6 +2,12 @@ package sort.nn;
 
 import sort.inf.ISort;
 
+
+/**
+ * 选择排序：1...i-1是已经排序好的，从i+1...a[N-1]中选择最小的放在i位置
+ * @author jay
+ *
+ */
 public class SelectionSort implements ISort
 {
 

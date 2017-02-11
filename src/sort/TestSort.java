@@ -21,47 +21,46 @@ public class TestSort
 			{ 23, 22, 5, 56, 44, 3, 21, 23, 58, 14, 9, 10, 9, 56, 89, 51, 74, 76, 78, 66 };
 
 		/**
-		 * 冒泡排序
+		 * 冒泡，选择，插入 ：这三个排序算法的平均时间复杂度为O(n*n)
 		 */
+		// 冒泡排序
 		ISort bubble = new BubbleSort();
 		testSort(bubble, a.clone());
 
-		/**
-		 * 选择排序
-		 */
+		// 选择排序
 		ISort selection = new SelectionSort();
 		testSort(selection, a.clone());
 
-		/**
-		 * 插入排序
-		 */
+		// 插入排序
 		ISort insert = new InsertionSort();
 		testSort(insert, a.clone());
 
 		/**
-		 * 堆排序
+		 * 堆排序，归并排序，快速排序 ：这三个的平均时间复杂度均为log(n)*n
 		 */
+		// 堆排序
 		ISort heap = new HeapSort();
 		testSort(heap, a.clone());
 
-		/**
-		 * 归并排序
-		 */
+		// 归并排序
 		ISort merge = new MergeSort();
 		testSort(merge, a.clone());
 
-		/**
-		 * 快速排序
-		 */
+		// 快速排序
 		ISort quick = new QuickSort();
 		testSort(quick, a.clone());
 
 		/**
-		 * 桶排序
+		 * 桶排序和bitmap排序其实质是一样的
 		 */
+		 // 桶排序
 		ISort buck = new BuckSort();
 		testSort(buck, a.clone());
 
+		//bitmap
+		ISort bitmap = new BitmapSort();
+		testSort(bitmap, a.clone());
+		
 		/**
 		 * 打印初始数组
 		 */

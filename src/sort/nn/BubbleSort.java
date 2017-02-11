@@ -2,6 +2,12 @@ package sort.nn;
 
 import sort.inf.ISort;
 
+
+/**
+ * 冒泡排序：与选择排序相反，从0....i中选择最大的放在数组后面
+ * @author jay
+ *
+ */
 public class BubbleSort implements ISort
 {
 	@Override
