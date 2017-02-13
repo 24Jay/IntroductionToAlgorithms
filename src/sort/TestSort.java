@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 import sort.inf.ISort;
 import sort.logn.HeapSort;
 import sort.logn.MergeSort;
@@ -53,28 +55,25 @@ public class TestSort
 		/**
 		 * 桶排序和bitmap排序其实质是一样的
 		 */
-		 // 桶排序
+		// 桶排序
 		ISort buck = new BuckSort();
 		testSort(buck, a.clone());
 
-		//bitmap
+		// bitmap
 		ISort bitmap = new BitmapSort();
 		testSort(bitmap, a.clone());
-		
+
 		/**
 		 * 打印初始数组
 		 */
 		System.out.println("*******************original Array*********************** ");
-		for (int i = 0; i < a.length; i++)
-			System.out.print(a[i] + "\t");
+		System.out.println(Arrays.toString(a));
 	}
 
 	private static void testSort(ISort sort, int[] a)
 	{
 		System.out.println("Sort Algorithm : " + sort.getClass().getName());
 		a = sort.sort(a);
-		for (int i = 0; i < a.length; i++)
-			System.out.print(a[i] + "\t");
-		System.out.println("");
+		System.out.println(Arrays.toString(a));
 	}
 }
