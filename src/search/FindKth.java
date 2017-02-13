@@ -14,17 +14,14 @@ public class FindKth
 	{
 		int[] a =
 			{ 23, 22, 5, 56, 44, 3, 21, 23, 58, 14, 9, 10, 9, 56, 89, 51, 74, 76, 78, 66 };
-		System.out.println(findKth(1,a));
-		System.out.println(findKth(2,a));
-		System.out.println(findKth(3,a));
-		System.out.println(findKth(4,a));
-		System.out.println(findKth(5,a));
-		System.out.println(findKth(6,a));
-
 		
+		for(int i=1;i<=a.length;i++)
+		{
+			System.out.print(findKth(i,a)+"\t");			
+		}
 	}
 
-	private static int findKth(int k, int[] a)
+	static int findKth(int k, int[] a)
 	{
 		int[] b = Arrays.copyOfRange(a, 0, k);
 		Arrays.sort(b);
