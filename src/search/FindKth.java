@@ -19,6 +19,11 @@ public class FindKth
 		{
 			System.out.print(findKth(i,a)+"\t");			
 		}
+		System.out.println("\n测试数组的for循环:");
+		for(int i:a)
+		{
+			System.out.print(i+"\t");
+		}
 	}
 
 	static int findKth(int k, int[] a)
