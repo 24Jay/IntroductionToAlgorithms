@@ -12,8 +12,14 @@ public class KMP
 {
 	public static void main(String[] ar)
 	{
-		System.out.println("basic method : "+new KMP().basic("zhangjjjzhng", "zhn"));
-		System.out.println("KMP method : "+new KMP().kmp("zhangjjjzhng", "zhn"));
+		System.out.println("kmp method : "
+				+ new KMP().kmp("annbcdanacadsannannacannaannacanna", "annacanna"));
+		System.out.println("basic method : "
+				+ new KMP().basic("annbcdanacadsannannacannaannacanna", "annacanna"));
+
+		System.out.println("basic method : " + new KMP().basic("annbcdabcabcd", "abcabc"));
+		System.out.println("KMP method : " + new KMP().kmp("annbcdabcabcd", "abcabc"));
+
 	}
 
 	/**
@@ -25,7 +31,7 @@ public class KMP
 	 */
 	public int basic(String target, String pattern)
 	{
-		for (int i = 0; i < target.length() - pattern.length(); i++)
+		for (int i = 0; i <= target.length() - pattern.length(); i++)
 		{
 			int j = 0;
 			for (; j < pattern.length(); j++)
@@ -39,36 +45,40 @@ public class KMP
 		return -1;
 	}
 
-	
 	/**
 	 * KMP算法
+	 * 
 	 * @param target
 	 * @param pattern
 	 * @return
 	 */
 	public int kmp(String target, String pattern)
 	{
-		int i = 0;
 		int[] ov = overload(pattern);
-		while (i < target.length() - pattern.length())
+		for (int i = 0; i <= target.length() - pattern.length();)
 		{
+			System.out.println("begin : i=" + i);
 			int j = 0;
-			for (; j < pattern.length();)
+			for (; j < pattern.length(); j++)
 			{
-				if (target.charAt(i + j) == pattern.charAt(j))
-				{
-					j++;
-				}
-				else
+				/***
+				 * 逐个字符测试匹配
+				 */
+				if (target.charAt(i + j) != pattern.charAt(j))
 				{
 					/**
 					 * 相当于把pattern向右移动j-ov[j]
 					 */
+					System.out.println("target[" + (i + j) + "] 和 pattern[" + j + "] 不匹配");
 					i += j - ov[j];
-//					System.out.println("miss! i="+i);
+					System.out.println("\tmiss! i=" + i);
 					break;
 				}
 			}
+
+			/**
+			 * 匹配完成
+			 */
 			if (j == pattern.length())
 				return ++i;
 		}
@@ -82,7 +92,7 @@ public class KMP
 		{
 			ov[i] = computeLoad(pattern.substring(0, i + 1));
 		}
-		System.out.println("overload function : "+Arrays.toString(ov));
+		System.out.println("overload function : " + Arrays.toString(ov));
 		return ov;
 	}
 
@@ -96,7 +106,6 @@ public class KMP
 			if (pattern.substring(0, i + 1)
 					.equals(pattern.substring(pattern.length() - i - 1, pattern.length())))
 			{
-				System.out.println("Matched!");
 				overload = i;
 			}
 		}
