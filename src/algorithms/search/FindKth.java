@@ -1,4 +1,4 @@
-package search;
+package algorithms.search;
 
 import java.util.Arrays;
 
@@ -14,15 +14,15 @@ public class FindKth
 	{
 		int[] a =
 			{ 23, 22, 5, 56, 44, 3, 21, 23, 58, 14, 9, 10, 9, 56, 89, 51, 74, 76, 78, 66 };
-		
-		for(int i=1;i<=a.length;i++)
+
+		for (int i = 1; i <= a.length; i++)
 		{
-			System.out.print(findKth(i,a)+"\t");			
+			System.out.print(findKth(i, a) + "\t");
 		}
 		System.out.println("\n测试数组的for循环:");
-		for(int i:a)
+		for (int i : a)
 		{
-			System.out.print(i+"\t");
+			System.out.print(i + "\t");
 		}
 	}
 
@@ -30,15 +30,15 @@ public class FindKth
 	{
 		int[] b = Arrays.copyOfRange(a, 0, k);
 		Arrays.sort(b);
-//		System.out.println(Arrays.toString(b));
+		// System.out.println(Arrays.toString(b));
 
 		for (int i = k; i < a.length; i++)
 		{
-			
-			//如果a[i]比最大的那个还大，那么跳过这个数
-			if(a[i] >= b[k-1])
+
+			// 如果a[i]比最大的那个还大，那么跳过这个数
+			if (a[i] >= b[k - 1])
 				continue;
-			
+
 			int temp = a[i], j = k - 1;
 			while (j >= 0 && b[j] > a[i])
 			{
@@ -48,7 +48,7 @@ public class FindKth
 					b[j + 1] = b[j];
 				j--;
 			}
-			b[j+1] = temp;
+			b[j + 1] = temp;
 		}
 		return b[k - 1];
 	}

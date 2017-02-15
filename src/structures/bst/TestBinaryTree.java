@@ -1,4 +1,4 @@
-package dataStructure.bst;
+package structures.bst;
 
 public class TestBinaryTree
 {

@@ -1,6 +1,6 @@
-package sort.nn;
+package algorithms.sort.nn;
 
-import sort.inf.ISort;
+import algorithms.sort.inf.ISort;
 
 
 /**

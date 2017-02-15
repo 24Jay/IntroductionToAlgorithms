@@ -1,8 +1,8 @@
-package sort;
+package algorithms.sort;
 
 import java.util.BitSet;
 
-import sort.inf.ISort;
+import algorithms.sort.inf.ISort;
 
 /**
  * 基本原理就是与桶排序类似，可以应用于数据量很大的应用,但是针对重复的数据会有问题

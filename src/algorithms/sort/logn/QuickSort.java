@@ -1,6 +1,6 @@
-package sort.logn;
+package algorithms.sort.logn;
 
-import sort.inf.ISort;
+import algorithms.sort.inf.ISort;
 
 public class QuickSort implements ISort
 {

@@ -1,14 +1,14 @@
-package sort;
+package algorithms.sort;
 
 import java.util.Arrays;
 
-import sort.inf.ISort;
-import sort.logn.HeapSort;
-import sort.logn.MergeSort;
-import sort.logn.QuickSort;
-import sort.nn.BubbleSort;
-import sort.nn.InsertionSort;
-import sort.nn.SelectionSort;
+import algorithms.sort.inf.ISort;
+import algorithms.sort.logn.HeapSort;
+import algorithms.sort.logn.MergeSort;
+import algorithms.sort.logn.QuickSort;
+import algorithms.sort.nn.BubbleSort;
+import algorithms.sort.nn.InsertionSort;
+import algorithms.sort.nn.SelectionSort;
 
 public class TestSort
 {

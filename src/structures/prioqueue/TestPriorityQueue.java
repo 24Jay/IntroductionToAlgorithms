@@ -1,4 +1,4 @@
-package dataStructure.prioqueue;
+package structures.prioqueue;
 
 import java.util.HashMap;
 import java.util.PriorityQueue;

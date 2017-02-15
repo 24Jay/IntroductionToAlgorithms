@@ -1,6 +1,6 @@
-package sort;
+package algorithms.sort;
 
-import sort.inf.ISort;
+import algorithms.sort.inf.ISort;
 
 public class ShellSort implements ISort
 {
