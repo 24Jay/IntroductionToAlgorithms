@@ -122,6 +122,6 @@ public class TestSort
 	{
 		System.out.println("Sort Algorithm : " + sort.getClass().getName());
 		a = sort.sort(a);
-		System.out.println(Arrays.toString(a));
+		System.out.println(Arrays.toString(a)+"\n");
 	}
 }
