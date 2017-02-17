@@ -19,6 +19,13 @@ public class TestSort
 	 */
 	public static void main(String[] args)
 	{
+		test();
+		System.out.println("\n\n**********************TestByRefletion***********************");
+		testByReflection();
+	}
+
+	private static void test()
+	{
 		int[] a =
 			{ 23, 22, 5, 56, 44, 3, 21, 23, 58, 14, 9, 10, 9, 56, 89, 51, 74, 76, 78, 66 };
 
@@ -68,8 +75,49 @@ public class TestSort
 		 */
 		System.out.println("*******************original Array*********************** ");
 		System.out.println(Arrays.toString(a));
+
 	}
 
+	/**
+	 * 应用反射来进行测试
+	 */
+	private static void testByReflection()
+	{
+
+		int[] a =
+			{ 23, 22, 5, 56, 44, 3, 21, 23, 58, 14, 9, 10, 9, 56, 89, 51, 74, 76, 78, 66 };
+		/**
+		 * 各路排序算法类
+		 */
+		String[] algo =
+			{ "algorithms.sort.nn.BubbleSort", "algorithms.sort.nn.SelectionSort",
+					"algorithms.sort.nn.InsertionSort", "algorithms.sort.logn.HeapSort",
+					"algorithms.sort.logn.MergeSort", "algorithms.sort.logn.QuickSort",
+					"algorithms.sort.BuckSort" };
+		for (String name : algo)
+		{
+			String cl = name;// + ".class";
+			try
+			{
+				Class<?> c = Class.forName(cl);
+				ISort sortion = (ISort) c.newInstance();
+				testSort(sortion, a.clone());
+			}
+			catch (ClassNotFoundException | InstantiationException | IllegalAccessException e)
+			{
+				e.printStackTrace();
+			}
+
+		}
+
+	}
+
+	/***
+	 * 调用方法进行测试
+	 * 
+	 * @param sort
+	 * @param a
+	 */
 	private static void testSort(ISort sort, int[] a)
 	{
 		System.out.println("Sort Algorithm : " + sort.getClass().getName());

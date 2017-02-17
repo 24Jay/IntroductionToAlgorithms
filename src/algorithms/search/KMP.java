@@ -13,9 +13,9 @@ public class KMP
 	public static void main(String[] ar)
 	{
 		System.out.println("kmp method : "
-				+ new KMP().kmp("annbcdanacadsannannacannaannacanna", "annacanna"));
+				+ new KMP().kmp("annbancnacannacdanacadsannannacannaannacanna", "annacanna"));
 		System.out.println("basic method : "
-				+ new KMP().basic("annbcdanacadsannannacannaannacanna", "annacanna"));
+				+ new KMP().basic("annbancnacannacdanacadsannannacannaannacanna", "annacanna"));
 
 		System.out.println("basic method : " + new KMP().basic("annbcdabcabcd", "abcabc"));
 		System.out.println("KMP method : " + new KMP().kmp("annbcdabcabcd", "abcabc"));
@@ -55,6 +55,7 @@ public class KMP
 	public int kmp(String target, String pattern)
 	{
 		int[] ov = overload(pattern);
+		int[] o = {1,1,2,3,3,5,5,5,5};
 		for (int i = 0; i <= target.length() - pattern.length();)
 		{
 			System.out.println("begin : i=" + i);
@@ -70,7 +71,7 @@ public class KMP
 					 * 相当于把pattern向右移动j-ov[j]
 					 */
 					System.out.println("target[" + (i + j) + "] 和 pattern[" + j + "] 不匹配");
-					i += j - ov[j];
+					i += o[j];
 					System.out.println("\tmiss! i=" + i);
 					break;
 				}
@@ -100,13 +101,13 @@ public class KMP
 	{
 		if (pattern.length() == 1 || pattern.length() == 0)
 			return -1;
-		int overload = -1;
+		int overload = 0;
 		for (int i = 0; i < pattern.length() / 2; i++)
 		{
 			if (pattern.substring(0, i + 1)
 					.equals(pattern.substring(pattern.length() - i - 1, pattern.length())))
 			{
-				overload = i;
+				overload = i+1;
 			}
 		}
 		return overload;
