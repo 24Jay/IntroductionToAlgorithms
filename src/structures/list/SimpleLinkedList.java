@@ -1,5 +1,6 @@
 package structures.list;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -24,6 +25,9 @@ public class SimpleLinkedList<T>
 
 	private int size = 0;
 
+	/**
+	 * 记录list被修改结构的次数
+	 */
 	private int modCount = 0;
 
 	private Node<T> head;
@@ -81,6 +85,20 @@ public class SimpleLinkedList<T>
 		return temp.data;
 	}
 
+	public T set(int id, T newValue)
+	{
+		if (id > size || id < 1)
+			return null;
+		Node<T> temp;
+		for (temp = head; id > 0; temp = temp.next, id--)
+		{
+		}
+		T oldValue = temp.data;
+		temp.data = newValue;
+		return oldValue;
+
+	}
+
 	public T remove(int id)
 	{
 		Node<T> temp = head;
@@ -120,7 +138,7 @@ public class SimpleLinkedList<T>
 	}
 
 	/***
-	 * 基本思想:在某个节点拆开,建一个新的list<br>
+	 * 反转链表 基本思想:逐个节点拆开,建一个新的list<br>
 	 */
 	public void reverse_2()
 	{
@@ -143,8 +161,36 @@ public class SimpleLinkedList<T>
 		{
 			b.append(temp.toString() + "->");
 		}
-
+		b.append("NULL");
 		return b.toString();
+	}
+
+	public Iterator<T> iterator()
+	{
+		return new LinkedListIterator();
+	}
+
+	private class LinkedListIterator implements Iterator<T>
+	{
+		Node<T> current = head;
+
+		@Override
+		public boolean hasNext()
+		{
+			return current.next != null;
+		}
+
+		@Override
+		public T next()
+		{
+			if (hasNext())
+			{
+				current = current.next;
+				return current.data;
+			}
+			return null;
+		}
+
 	}
 
 	public static void main(String[] ar)
@@ -157,12 +203,20 @@ public class SimpleLinkedList<T>
 		}
 		System.out.println(list);
 		System.out.println("Get an element : (data=" + list.get(6) + ")");
-		System.out.println("Remove an element : (data=" + list.remove(6) + ")");
+		// System.out.println("Remove an element : (data=" + list.remove(6) +
+		// ")");
+		System.out.println("Remove an element : (data=" + list.set(6, 110) + ")");
 		System.out.println("\nOriginal list : " + list);
 		list.reverse_1();
 		System.out.println("List after reversed_1 : " + list);
 		list.reverse_2();
 		System.out.println("List after reversed_2 : " + list);
 
+		/***
+		 * Iterator
+		 */
+		Iterator<Integer> it = list.iterator();
+		while (it.hasNext())
+			System.out.println("it.next = " + it.next());
 	}
 }
