@@ -2,7 +2,6 @@ package structures.recurse;
 
 import java.util.List;
 
-import javax.swing.InputMap;
 
 /****
  * 一个树的节点<br>

@@ -9,12 +9,13 @@ public class Tree
 {
 	private TreeNode root;
 
-	
-	private int depth =0;
+	private int depth = 0;
 
 	public Tree()
 	{
-		this.root = new TreeNode("root", new LinkedList<TreeNode>());
+		this.root = new TreeNode("/", new LinkedList<TreeNode>());
+		TreeNode r = new TreeNode("root", new LinkedList<TreeNode>());
+		root.addChild(r);
 	}
 
 	public int getDepth()
@@ -61,6 +62,31 @@ public class Tree
 		root.addChild(var);
 		root.addChild(usr);
 		root.addChild(home);
+	}
+
+	public void depthFirst()
+	{
+
+	}
+
+	public void wildthFirst()
+	{
+		System.out.println(root.getName());
+		wildthF(root);
+	}
+
+	private void wildthF(TreeNode r)
+	{
+
+		List<TreeNode> children = r.getChildren();
+		if (children != null)
+		{
+			for (TreeNode n : children)
+				System.out.print(n.getName() + "\t");
+			System.out.println("");
+			for (TreeNode n : children)
+				wildthF(n);
+		}
 	}
 
 	public void walkTree()
