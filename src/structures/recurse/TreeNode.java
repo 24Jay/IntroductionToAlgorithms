@@ -2,6 +2,8 @@ package structures.recurse;
 
 import java.util.List;
 
+import javax.swing.InputMap;
+
 /****
  * 一个树的节点<br>
  * 
@@ -10,15 +12,18 @@ import java.util.List;
  */
 public class TreeNode
 {
-	String name;
+	private String name;
 
-	List<TreeNode> children;
+	private List<TreeNode> children;
+
 
 	public TreeNode(String n, List<TreeNode> list)
 	{
 		this.name = n;
 		this.children = list;
 	}
+
+	
 
 	public boolean addChild(TreeNode n)
 	{

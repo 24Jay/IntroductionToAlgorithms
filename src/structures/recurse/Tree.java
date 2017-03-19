@@ -9,11 +9,33 @@ public class Tree
 {
 	private TreeNode root;
 
-	private int depth = 0;
+	
+	private int depth =0;
 
 	public Tree()
 	{
 		this.root = new TreeNode("root", new LinkedList<TreeNode>());
+	}
+
+	public int getDepth()
+	{
+		return countDepth(root);
+	}
+
+	public int countDepth(TreeNode r)
+	{
+		List<TreeNode> list = r.getChildren();
+		if (list == null || list.isEmpty())
+			return 1;
+		int maxChild = 0;
+		for (TreeNode node : list)
+		{
+			if (maxChild < countDepth(node))
+				maxChild = countDepth(node);
+		}
+		System.out.println("maxCHild = " + maxChild);
+		return maxChild + 1;
+
 	}
 
 	public void buildTree()
@@ -109,8 +131,7 @@ public class Tree
 
 	private void heavyTree(TreeNode r)
 	{
-		System.out.println("Depth = " + depth);
-		if (depth > 5000)
+		if (depth > 100)
 			return;
 		TreeNode a = new TreeNode("left_" + depth, new ArrayList<>());
 		TreeNode b = new TreeNode("right_" + depth, new ArrayList<>());
@@ -121,13 +142,4 @@ public class Tree
 		heavyTree(b);
 	}
 
-	public static void main(String[] ar)
-	{
-		Tree tree = new Tree();
-		// tree.buildTree();
-		tree.buildHeavyTree();
-		tree.walkTree();
-		System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-		tree.nonRecurseWalking();
-	}
 }
