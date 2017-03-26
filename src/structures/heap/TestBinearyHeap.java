@@ -6,8 +6,10 @@ public class TestBinearyHeap
 	{
 		BinaryHeap heap = new BinaryHeap<>(30);
 		for (int i = 1; i < 20; i++)
-			heap.insert(20-i);
+			heap.insert(20 - i);
 		System.out.println(heap);
-		System.out.println(heap.findMin());
+		for (int i = 0; i < 10; i++)
+			System.out.println(heap.removeMin());
+		System.out.println(heap);
 	}
 }
