@@ -104,25 +104,29 @@ public class BinaryHeap<T extends Comparable<T>>
 
 	private void percolateDown(int hole)
 	{
-		int child;
 		T temp = (T) heaps[hole];
+		int child;
 		for (; hole * 2 <= currentSize; hole = child)
 		{
-			child = hole * 2;
-			if (child != currentSize && ((T) heaps[child + 1]).compareTo((T) heaps[child]) < 0)
-				child++;
+			child = 2 * hole;
+			T left = (T) heaps[child];
+			T right = (T) heaps[child + 1];
+			if (child < currentSize && left.compareTo(right) > 0)
+			{
+				child = child + 1;
+			}
+
 			if (((T) heaps[child]).compareTo(temp) < 0)
 				heaps[hole] = heaps[child];
 			else
-			{
 				break;
-			}
 		}
 		heaps[hole] = temp;
 	}
 
 	public String toString()
 	{
-		return Arrays.toString(heaps);
+		Object[] used = Arrays.copyOfRange(heaps, 1, currentSize + 1);
+		return Arrays.toString(used);
 	}
 }
