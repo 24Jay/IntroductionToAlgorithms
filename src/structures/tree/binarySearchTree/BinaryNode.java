@@ -1,4 +1,4 @@
-package structures.bst;
+package structures.tree.binarySearchTree;
 
 public class BinaryNode<T>
 {

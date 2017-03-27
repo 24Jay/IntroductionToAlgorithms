@@ -157,7 +157,7 @@ public class Tree
 
 	private void heavyTree(TreeNode r)
 	{
-		if (depth > 100)
+		if (depth > 1000)
 			return;
 		TreeNode a = new TreeNode("left_" + depth, new ArrayList<>());
 		TreeNode b = new TreeNode("right_" + depth, new ArrayList<>());
