@@ -1,4 +1,4 @@
-package structures.recurse;
+package structures.tree.recurse;
 
 public class TestTree
 {
