@@ -1,8 +1,8 @@
 package algorithms.sort.logn;
 
 import algorithms.sort.inf.ISort;
-import structures.bst.BinaryNode;
-import structures.bst.BinarySearchTree;
+import structures.tree.bst.BinaryNode;
+import structures.tree.bst.BinarySearchTree;
 
 public class HeapSort implements ISort
 {
