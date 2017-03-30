@@ -1,4 +1,4 @@
-package structures.tree.binarySearchTree;
+package structures.tree.bst;
 
 public class TestBinaryTree
 {

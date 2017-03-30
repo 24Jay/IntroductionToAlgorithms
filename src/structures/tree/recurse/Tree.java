@@ -1,4 +1,4 @@
-package structures.recurse;
+package structures.tree.recurse;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
